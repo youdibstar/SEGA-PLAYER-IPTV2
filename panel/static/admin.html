@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SEGA IPTV Player | لوحة التحكم</title><link rel="stylesheet" href="/admin/assets/app.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">▶</div><div><strong>SEGA IPTV PLAYER</strong><small>CONTROL CENTER</small></div></div>
+  <div class="section-caption">الإدارة</div>
+  <button class="nav active" data-tab="overview"><span>▦</span> نظرة عامة</button>
+  <button class="nav" data-tab="devices"><span>▣</span> الأجهزة والتفعيل</button>
+  <button class="nav" data-tab="playlists"><span>▤</span> قوائم M3U</button>
+  <button class="nav" data-tab="appearance"><span>◈</span> المظهر والعلامة</button>
+  <div class="sidebar-bottom"><span class="online-dot"></span> الخادم يعمل <small>V 0.3.0 MVP</small></div>
+</aside>
+<main class="main">
+  <header class="topbar"><div><div class="eyebrow">SEGA IPTV PLAYER / ADMIN</div><h1 id="page-title">نظرة عامة</h1><p class="muted">إدارة المشغّل ومحتوى الأجهزة من مكان واحد</p></div><div class="actions"><button class="btn btn-quiet" id="refresh">↻ تحديث البيانات</button><div class="avatar">SP</div></div></header>
+  <section class="tab" id="tab-overview">
+    <div class="stat-grid"><article class="stat-card"><span>إجمالي الأجهزة</span><strong id="stat-devices">0</strong><small>أجهزة تم تسجيلها</small></article><article class="stat-card"><span>اشتراكات نشطة</span><strong id="stat-active">0</strong><small>حالة التفعيل الحالية</small></article><article class="stat-card"><span>قوائم البث</span><strong id="stat-lists">0</strong><small>روابط M3U مضافة</small></article></div>
+    <div class="two-column"><section class="panel"><div class="panel-heading"><div><h2>آخر الأجهزة المتصلة</h2><p>اضغط على إدارة لفتح التفاصيل</p></div><button class="text-button" data-show="devices">عرض الجميع ←</button></div><div id="latest-devices"></div></section><section class="panel"><div class="panel-heading"><div><h2>معاينة الهوية</h2><p>إعدادات المظهر المعتمدة</p></div></div><div class="preview" id="overview-preview"><div class="preview-shade"><span class="pill">LIVE TV • M3U</span><h2 id="preview-brand">SEGA IPTV PLAYER</h2><p>كل قنواتك. تجربة واحدة أنيقة.</p><div class="preview-tiles"><div class="preview-tile live"><span>▣</span><b>البث المباشر</b><small>LIVE TV</small></div><div class="preview-tile"><b>الأفلام</b><small>قريبًا</small></div><div class="preview-tile"><b>المسلسلات</b><small>قريبًا</small></div></div></div></div></section></div>
+  </section>
+  <section class="tab hidden" id="tab-devices"><div class="panel"><div class="panel-heading"><div><h2>الأجهزة المسجّلة</h2><p>عنوان MAC افتراضي ومفتاح خاص لكل تثبيت</p></div><input class="search" id="device-search" placeholder="ابحث برقم MAC أو اسم الجهاز..."></div><div class="table-wrap"><table><thead><tr><th>الجهاز</th><th>MAC</th><th>مفتاح الجهاز</th><th>التفعيل</th><th>تاريخ الانتهاء</th><th>إدارة</th></tr></thead><tbody id="device-table"></tbody></table></div></div></section>
+  <section class="tab hidden" id="tab-playlists"><div class="panel"><div class="panel-heading"><div><h2>قوائم التشغيل</h2><p>أضف روابط M3U أو عدّلها، وستظهر بعد تحديث التطبيق</p></div><button class="btn btn-primary" id="add-playlist">＋ إضافة قائمة جديدة</button></div><div class="table-wrap"><table><thead><tr><th>اسم القائمة</th><th>رابط M3U</th><th>نوع التوزيع</th><th>الإجراءات</th></tr></thead><tbody id="playlist-table"></tbody></table></div></div></section>
+  <section class="tab hidden" id="tab-appearance"><div class="two-column"><form class="panel form-panel" id="theme-form"><div class="panel-heading"><div><h2>تخصيص المشغّل</h2><p>تُسحب الإعدادات تلقائيًا عند المزامنة</p></div></div><label>اسم التطبيق<input required name="app_name" maxlength="50" placeholder="SEGA IPTV Player"></label><label>اللون الأساسي<input required name="accent_color" type="color" value="#E5474C"></label><label>رابط صورة الخلفية<input name="background_url" placeholder="https://example.com/background.jpg" dir="ltr"></label><label>رابط الشعار<input name="logo_url" placeholder="https://example.com/logo.png" dir="ltr"></label><button class="btn btn-primary">حفظ المظهر</button></form><section class="panel"><div class="panel-heading"><div><h2>معاينة المظهر</h2><p>محاكاة لمظهر الصفحة الرئيسية</p></div></div><div class="preview preview-tall" id="theme-preview"><div class="preview-shade"><span class="pill">PREMIUM PLAYER</span><h2 id="theme-brand">SEGA IPTV PLAYER</h2><p>شاهد ما تحب، بسهولة ووضوح.</p><div class="preview-tiles"><div class="preview-tile live"><span>▣</span><b>البث المباشر</b><small>LIVE TV</small></div><div class="preview-tile"><b>المفضلة</b><small>FAVORITES</small></div><div class="preview-tile"><b>الإعدادات</b><small>SETTINGS</small></div></div></div></div></section></div></section>
+  <footer>SEGA IPTV Player Control Center • إدارة المصادر التي تملك حق استخدامها فقط</footer>
+</main></div>
+<dialog id="modal"><form id="modal-form" method="dialog"><div class="modal-head"><h2 id="modal-title"></h2><button value="cancel" class="icon-close" type="button" id="modal-close">✕</button></div><div id="modal-body"></div><div class="modal-actions"><button class="btn btn-quiet" type="button" id="cancel-modal">إلغاء</button><button class="btn btn-primary" type="submit" id="save-modal">حفظ</button></div></form></dialog>
+<div id="toast" role="status"></div>
+<script src="/admin/assets/app.js"></script>
+</body></html>

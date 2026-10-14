@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+set -eu
+cd "$(dirname "$0")"
+JAR="gradle/wrapper/gradle-wrapper.jar"
+EXPECTED="81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f"
+if [ ! -f "$JAR" ]; then
+  echo "Downloading official Gradle 8.13 wrapper JAR (first run only)..."
+  if command -v curl >/dev/null 2>&1; then
+    curl --fail --location --silent --show-error "https://services.gradle.org/distributions/gradle-8.13-wrapper.jar" -o "$JAR"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -q "https://services.gradle.org/distributions/gradle-8.13-wrapper.jar" -O "$JAR"
+  else
+    echo "Install curl or wget, or generate a Gradle wrapper locally." >&2; exit 1
+  fi
+fi
+if command -v sha256sum >/dev/null 2>&1; then
+  ACTUAL="$(sha256sum "$JAR" | cut -d ' ' -f 1)"
+else
+  ACTUAL="$(shasum -a 256 "$JAR" | cut -d ' ' -f 1)"
+fi
+if [ "$ACTUAL" != "$EXPECTED" ]; then
+  echo "SECURITY: unexpected Gradle Wrapper JAR SHA-256 ($ACTUAL)" >&2
+  rm -f "$JAR"; exit 1
+fi
+exec java -cp "$JAR" org.gradle.wrapper.GradleWrapperMain "$@"
