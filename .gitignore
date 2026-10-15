@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.db
+*.sqlite
+*.sqlite3
+# Android / Gradle
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+# Secrets
+.env
+.env.*
+!.env.example
