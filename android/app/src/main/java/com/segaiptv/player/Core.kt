@@ -39,7 +39,7 @@ class DeviceIdentity(private val context: Context) {
         }
     }
     val key: String by lazy {
-        prefs.getString("device_key", null) ?: (UUID.randomUUID().toString() + UUID.randomUUID().toString()).also {
+        prefs.getString("device_key", null) ?: ((1..6).map { "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"[java.security.SecureRandom().nextInt(32)] }.joinToString("")).also {
             prefs.edit().putString("device_key", it).apply()
         }
     }
