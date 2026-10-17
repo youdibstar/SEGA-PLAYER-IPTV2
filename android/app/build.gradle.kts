@@ -16,7 +16,7 @@ android {
         versionName = "0.3.0"
         // Android Emulator: 10.0.2.2; physical device: your PC LAN IP / domain.
         val backendUrl = providers.gradleProperty("SEGA_IPTV_BACKEND_URL")
-            .orElse("http://10.0.2.2:8000").get()
+            .orElse("https://sega.faster4k.xyz").get()
         buildConfigField("String", "BACKEND_URL", "\"$backendUrl\"")
     }
     buildFeatures {
